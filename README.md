@@ -1,7 +1,7 @@
 # Redes C2
 ## Actividad 2
 Para ejecutar el proyecto se debe runear desde una virtual box, linux.
-Usando dos terminales en la carpeta del proyecto y el comando python3 + el nombre del archivo: primero `python3 servidor_test.py` y luego `python3 cliente_test.py`.
+Usando dos terminales en la carpeta con los comandos:`python3 servidor_test.py` y luego `python3 cliente_test.py`.
 
 El cliente envía archivo.txt usando Go-Back N con control de congestión, y el servidor lo guarda en recibido.txt. Si todo funciona, el servidor imprime "OK, llegó íntegro".
 
