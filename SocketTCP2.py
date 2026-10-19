@@ -49,6 +49,7 @@ class SocketTCP:
         # parte 3
         self.congestion_controler = CongestionControl(SocketTCP.CC_MSS)
         self.congestion_control_on = False
+        self.number_of_sent_segments = 0  # segmentos de datos enviados en go back n (con retransmisiones)
 
     def set_congestion_control(self, on):
         self.congestion_control_on = bool(on)
@@ -288,6 +289,7 @@ class SocketTCP:
                 return
             seg = SocketTCP.create_segment(seq_num=data_window.get_sequence_number(i), data=data)
             udp.sendto(seg, self.dest_address, timer_index=0)
+            self.number_of_sent_segments += 1
 
         try:
             for i in range(window_size):
