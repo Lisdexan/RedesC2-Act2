@@ -8,3 +8,5 @@ El cliente envía archivo.txt usando Go-Back N con control de congestión, y el 
 Para probar con pérdidas se usa netem: `sudo tc qdisc add dev lo root netem loss 20.0% delay 0.5s`, y al terminar se desactiva con `sudo tc qdisc del dev lo root netem`.
 
 Se necesita tener SocketTCP2.py, CongestionControl.py, slidingWindowCC.py, socketUDP.py y archivo.txt en la misma carpeta donde se encuentran servidor_test.py y cliente_test.py
+
+También se pueden hacer múltiples runs para poder comparar con congestión y sin congestión. usando `python3 experimento.py <runs> <bytes del msje>` como experimento.py 2 400, haria 2 runs con el mensaje solo tomando los primeros 400 bytes (2 con congestión y 2 sin congestión.)
